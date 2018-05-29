@@ -1,0 +1,147 @@
+<%= form_for(sign_up) do |f| %>
+  <% if sign_up.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sign_up.errors.count, "error") %> prohibited this sign_up from being saved:</h2>
+
+      <ul>
+      <% sign_up.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form>
+  <style type="text/css">.form-row {padding-top:20px;}</style>
+    <div class="container">
+        <div class="form-row">
+          <div class="col-md-4">
+            <div class="field">
+              <%= f.label :first_name, for: "validationDefault01" %>
+              <%= f.text_field :first_name, class: "form-control", id: "validationDefault01", placeholder: "First Name", required: true %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="field">
+              <%= f.label :last_name, for: "validationDefault01" %>
+              <%= f.text_field :last_name, class: "form-control", id: "validationDefault01", placeholder: "Last Name", required: true %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="field">
+              <%= f.label :email, for: "validationDefault01" %>
+              <%= f.text_field :email, type: "email", class: "form-control", id: "validationDefault01", placeholder: "example@email.com", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="field">
+              <%= f.label :company_name, for: "validationDefault01" %>
+              <%= f.text_field :company_name, class: "form-control", id: "validationDefault01", placeholder: "Company Name", required: true %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="field">
+              <%= f.label :company_mailing_address, for: "validationDefault01" %>
+              <%= f.text_field :company_mailing_address, class: "form-control", id: "validationDefault01", placeholder: "1234 Main St, ste 100", required: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="form-row">
+        <div class="col-md-3">
+          <div class="field">
+            <%= f.label :city, for: "validationDefault01" %>
+            <%= f.text_field :city, class: "form-control", id: "validationDefault01", placeholder: "City", required: true %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="field">
+            <%= f.label :state, for: "validationDefault01" %>
+            <p><%= f.select :state, ['California','Alabama','Alaska','American Samoa','Arizona','Arkansas','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'], class: "form-control", id: "validationDefault01", required: true %></p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="field">
+            <%= f.label :zip, for: "validationDefault01" %>
+            <%= f.text_field :zip, class: "form-control", type: 'number', id: "validationDefault01", placeholder: "12345" , required: true%>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="field">
+            <%= f.label :company_phone_number, for: "number" %>
+            <%= f.text_field :company_phone_number, class: "form-control", type: 'number', id: "number", placeholder: "555 555 5555", required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-4">
+          <div class="field">
+            <%= f.label :password, for: "pwd" %>
+            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="field">
+            <%= f.label :company_type, for:"validationDefault01" %>
+            <p><%= f.select :company_type, ["Contractor","Member"], class: "form-control", id:'validationDefault01', required: true %></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="field">
+            <%= f.label :user_name, for: "validationDefault01" %>
+            <%= f.text_field :user_name, class: 'form-control', id: 'validationDefault01', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div type="submit" class="actions">
+    <%= f.submit class: 'btn btn-default', type: "submit"%>
+  </div>
+<% end %>
+<script type="text/javascript">
+  (function ($) {
+      $.toggleShowPassword = function (options) {
+          var settings = $.extend({
+            field: "#password",
+            control: "#toggle_show_password",
+          }, options);
+
+          var control = $(settings.control);
+          var field = $(settings.field)  
+         };
+    }(jQuery));
+
+    $.toggleShowPassword({
+        field: '#password-input',
+        control: '#enable-show'
+});
+;</script>
+<script type="text/javascript">
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>

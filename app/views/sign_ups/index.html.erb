@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <style type="text/css">#logo{padding-top: 10px !important;}</style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="logo">
+      <a  href="#">
+        <img src="./usanorth1.png" width="150" class="center-block" alt="Responsive image">
+      </a>
+    </nav>
+    <div class="jumbotron">
+      <style type="text/css">
+        .jumbotron { background: #2b2d35 !important; } 
+
+    </style>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9 center-block">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6VYjVahBejw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <h3 class="text-center">Sign Up for E-Tickets</h3>
+    
+<h1>Sign Ups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Company name</th>
+      <th>Company mailing address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Company phone number</th>
+      <th>Password</th>
+      <th>Company type</th>
+      <th>User name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sign_ups.each do |sign_up| %>
+      <tr>
+        <td><%= sign_up.first_name %></td>
+        <td><%= sign_up.last_name %></td>
+        <td><%= sign_up.email %></td>
+        <td><%= sign_up.company_name %></td>
+        <td><%= sign_up.company_mailing_address %></td>
+        <td><%= sign_up.city %></td>
+        <td><%= sign_up.state %></td>
+        <td><%= sign_up.zip %></td>
+        <td><%= sign_up.company_phone_number %></td>
+        <td><%= sign_up.password %></td>
+        <td><%= sign_up.company_type %></td>
+        <td><%= sign_up.user_name %></td>
+        <td><%= link_to 'Show', sign_up %></td>
+        <td><%= link_to 'Edit', edit_sign_up_path(sign_up) %></td>
+        <td><%= link_to 'Destroy', sign_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sign Up', new_sign_up_path %>
