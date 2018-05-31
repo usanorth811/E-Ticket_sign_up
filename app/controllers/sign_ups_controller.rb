@@ -15,6 +15,7 @@ class SignUpsController < ApplicationController
   # GET /sign_ups/new
   def new
     @sign_up = SignUp.new
+
   end
 
   # GET /sign_ups/1/edit
@@ -25,7 +26,7 @@ class SignUpsController < ApplicationController
   # POST /sign_ups.json
   def create
     @sign_up = SignUp.new(sign_up_params)
-
+    @sign_up[:user_name] = @sign_up[:first_name][0,3]+@sign_up[:last_name][0,3]+SecureRandom.hex(2)
     respond_to do |format|
       if @sign_up.save
         format.html { redirect_to @sign_up, notice: 'Sign up was successfully created.' }
