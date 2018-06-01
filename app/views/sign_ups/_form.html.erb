@@ -83,7 +83,7 @@
         <div class="col-md-4">
           <div class="field">
             <%= f.label :password, for: "pwd" %>
-            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "minimum of 6 characters", required: true%><h5><small> *Password must be alphanumeric. No special characters allowed. </small></h5>
+            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%><h5><small> * Password must be alphanumeric. <p>* 6 - 14 Characters</p> </small></h5>
 
           </div>
         </div>
@@ -91,7 +91,7 @@
         <div class="col-md-4">
           <div class="field">
             <%= f.label :password_confirmation, for: "pwd" %>
-            <%= f.text_field :password_confirmation, class: "form-control", type: "password", id: "pwd" %>
+            <%= f.text_field :password_confirmation, class: "form-control", type: "password", id: "pwd", placeholder: "Confirm password", required: true %>
           </div>
         </div>
 
