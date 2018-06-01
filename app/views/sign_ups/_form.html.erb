@@ -67,7 +67,7 @@
         <div class="col-md-2">
           <div class="field">
             <%= f.label :zip, for: "validationDefault01" %>
-            <%= f.text_field :zip, class: "form-control", type: 'number', id: "validationDefault01", placeholder: "12345" , required: true%>
+            <%= f.text_field :zip, class: "form-control", type: 'number', id: "validationDefault01", maxlength: "5",placeholder: "5 digit zip" , required: true%>
           </div>
         </div>
         <div class="col-md-4">
@@ -83,7 +83,8 @@
         <div class="col-md-4">
           <div class="field">
             <%= f.label :password, for: "pwd" %>
-            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%>
+            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "minimum of 6 characters", required: true%><h5><small> *Password must be alphanumeric. No special characters allowed. </small></h5>
+
           </div>
         </div>
         <div class="col-md-4">
@@ -100,7 +101,9 @@
 
     <div class="container">
       <div class="col-md-4">
-        <div type="submit" class="actions">
+      </div>
+      <div class="col-md-4">
+        <div type="submit" class="actions text-center">
           <%= f.submit class: 'btn btn-default', type: "submit"%>
         </div>
       </div>
