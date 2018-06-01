@@ -28,7 +28,18 @@ class SignUpsController < ApplicationController
     @sign_up = SignUp.new(sign_up_params)
     @sign_up[:user_name] = @sign_up[:first_name][0,3]+@sign_up[:last_name][0,3]+SecureRandom.hex(2)
     respond_to do |format|
+      #if @sign_up.valid?
       if @sign_up.save
+        require 'open-uri'
+        require'net/https'
+        #url = URI.parse('https://MY_URL')
+        #request = Net::HTTP::Post.new(url.path)
+        #response = Net::HTTP.start(url.host,url.port){|http| http.request(request)}
+        #req.form_data = data
+        #req.basic_auth url.user, url.password if url.user
+        #con =Net::HTTP.new(url.host, url.port)
+        #con.use_SSL = true
+        #con.start {|http| http.request(req)}
         format.html { redirect_to @sign_up, notice: 'Sign up was successfully created.' }
         format.json { render :show, status: :created, location: @sign_up }
       else

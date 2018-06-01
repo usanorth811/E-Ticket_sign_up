@@ -81,7 +81,10 @@
     <div class="container">
       <div class="form-row">
         <div class="col-md-4">
-          
+          <div class="field">
+            <%= f.label :password, for: "pwd" %>
+            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%>
+          </div>
         </div>
         <div class="col-md-4">
           <div class="field">
@@ -89,7 +92,9 @@
             <p><%= f.select :company_type, ["Contractor","Member"], class: "form-control", id:'validationDefault01', required: true %></p>
           </div>
         </div>
-        
+        <div class="col-md-4">
+
+        </div>
       </div>
     </div>
 
