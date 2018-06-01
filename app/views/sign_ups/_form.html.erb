@@ -87,6 +87,14 @@
 
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="field">
+            <%= f.label :password_confirmation, for: "pwd" %>
+            <%= f.text_field :password_confirmation, class: "form-control", type: "password", id: "pwd" %>
+          </div>
+        </div>
+
         <div class="col-md-4">
           <div class="field">
             <%= f.label :company_type, for:"validationDefault01" %>

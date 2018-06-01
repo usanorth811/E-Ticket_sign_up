@@ -81,6 +81,6 @@ class SignUpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sign_up_params
-      params.require(:sign_up).permit(:first_name, :last_name, :email, :company_name, :company_mailing_address, :city, :state, :zip, :company_phone_number, :password, :company_type, :user_name)
+      params.require(:sign_up).permit(:first_name, :last_name, :email, :company_name, :company_mailing_address, :city, :state, :zip, :company_phone_number, :password, :password_confirmation, :company_type, :user_name)
     end
 end
