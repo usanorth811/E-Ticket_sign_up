@@ -40,7 +40,7 @@ class SignUpsController < ApplicationController
         #con =Net::HTTP.new(url.host, url.port)
         #con.use_SSL = true
         #con.start {|http| http.request(req)}
-        format.html { redirect_to root_url, notice: 'Sign up was successfully created.' }
+        format.html { redirect_to root_url, notice: 'New User was successfully created' }
         format.json { render :show, status: :created, location: @sign_up }
       else
         format.html { render :new }
