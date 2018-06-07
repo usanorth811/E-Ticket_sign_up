@@ -1,105 +1,128 @@
 <%= form_for(sign_up) do |f| %>
+<div class="container-fluid">
   <% if sign_up.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sign_up.errors.count, "error") %> prohibited this sign_up from being saved:</h2>
+    <div  class='text-center' id="error_explanation">
+      <h2><%= pluralize(sign_up.errors.count, "error") %> prohibited this form from submitting:</h2>
 
-      <ul>
+      <div class="text-center">
+        <div class="col-md-12">
       <% sign_up.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </div>
+      </div>
     </div>
   <% end %>
- 
+ </div>
 <form>
   <style type="text/css">.form-row {padding-top:20px;}</style>
-    <div class="container-fluid">
-        <div class="form-row">
-          <div class="col-md-3 col-sm-0">
+
+  <div class="container-fluid">
+      <div class="form-row">
+
+        <div class="col-md-3 col-sm-0">
+        </div>
+
+        <div class="col-md-2 col-sm-12">
+          <div class="field">
+            <%= f.label :first_name, for: "validationDefault01" %>
+            <%= f.text_field :first_name, class: "form-control", id: "validationDefault01", placeholder: "First Name", required: true %>
           </div>
-          <div class="col-md-2 col-sm-12">
-            <div class="field">
-              <%= f.label :first_name, for: "validationDefault01" %>
-              <%= f.text_field :first_name, class: "form-control", id: "validationDefault01", placeholder: "First Name", required: true %>
-            </div>
-          </div>
+        </div>
+
           <div class="col-md-2 col-sm-12">
             <div class="field">
               <%= f.label :last_name, for: "validationDefault01" %>
               <%= f.text_field :last_name, class: "form-control", id: "validationDefault01", placeholder: "Last Name", required: true %>
             </div>
           </div>
+
           <div class="col-md-2 col-sm-12">
             <div class="field">
               <%= f.label :email, for: "validationDefault01" %>
               <%= f.text_field :email, type: "email", class: "form-control", id: "validationDefault01", placeholder: "example@email.com", required: true %>
             </div>
           </div>
+
         </div>
       </div>
+
       <div class="container-fluid">
         <div class="form-row">
+
           <div class="col-md-3 col-sm-0">
           </div>
+
           <div class="col-md-3 col-sm-12">
             <div class="field">
               <%= f.label :company_name, for: "validationDefault01" %>
               <%= f.text_field :company_name, class: "form-control", id: "validationDefault01", placeholder: "Company Name", required: true %>
             </div>
           </div>
+
           <div class="col-md-3 col-sm-12">
             <div class="field">
               <%= f.label :company_mailing_address, for: "validationDefault01" %>
               <%= f.text_field :company_mailing_address, class: "form-control", id: "validationDefault01", placeholder: "1234 Main St, ste 100", required: true %>
             </div>
           </div>
+
         </div>
       </div>
+
       <div class="container-fluid">
         <div class="form-row">
+
         <div class="col-md-3 col-sm-0">
         </div>
+
         <div class="col-md-1 col-sm-12">
           <div class="field">
             <%= f.label :city, for: "validationDefault01" %>
             <%= f.text_field :city, class: "form-control", id: "validationDefault01", placeholder: "City", required: true %>
           </div>
         </div>
+
         <div class="col-md-2 col-sm-12">
           <div class="field">
             <%= f.label :state, for: "validationDefault01" %>
             <p><%= f.select :state, ['California','Alabama','Alaska','American Samoa','Arizona','Arkansas','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'], class: "form-control", id: "validationDefault01", :style => "height:10px", required: true %></p>
           </div>
         </div>
+
         <div class="col-md-1 col-sm-12">
           <div class="field">
             <%= f.label :zip, for: "validationDefault01" %>
             <%= f.text_field :zip, class: "form-control", type: 'number', id: "validationDefault01", maxlength: "5",placeholder: "5 digit zip" , required: true%>
           </div>
         </div>
+
         <div class="col-md-2 col-sm-12">
           <div class="field">
             <%= f.label :company_phone_number, for: "number" %>
             <%= f.text_field :company_phone_number, class: "form-control", type: 'number', id: "number", placeholder: "555 555 5555", required: true %>
           </div>
         </div>
+
       </div>
     </div>
+
     <div class="container-fluid">
       <div class="form-row">
+
         <div class="col-md-3 col-sm-0">
         </div>
+
         <div class="col-md-2 col-sm-12">
           <div class="field">
             <%= f.label :password, for: "pwd" %>
             <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%><h5><small> * Password must be alphanumeric. <p>* Must be 6 - 14 Characters</p> </small></h5>
-
           </div>
         </div>
 
         <div class="col-md-2 col-sm-12">
           <div class="field">
-            <%= f.label :password_confirmation, for: "pwd" %>
+            <%= f.label :password_confirmation, 'Confirm Password', for: "pwd" %>
             <%= f.text_field :password_confirmation, class: "form-control", type: "password", id: "pwd", placeholder: "Confirm password", required: true %>
           </div>
         </div>
@@ -110,20 +133,24 @@
             <p><%= f.select :company_type, ["Contractor","Member"], class: "form-control", id:'validationDefault01', required: true %></p>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12">
 
+        <div class="col-md-4 col-sm-12">
         </div>
+
       </div>
     </div>
 
     <div class="container-fluid">
+
       <div class="col-md-4 col-sm-0">
       </div>
+
       <div class="col-md-4 col-sm-12">
         <div type="submit" class="actions text-center">
           <%= f.submit class: 'btn btn-primary', type: "submit"%>
         </div>
       </div>
+
     </div>
   </form>
 
