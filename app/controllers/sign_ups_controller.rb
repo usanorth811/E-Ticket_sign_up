@@ -30,9 +30,15 @@ class SignUpsController < ApplicationController
     respond_to do |format|
       if @sign_up.valid?
       #if @sign_up.save
+        #require 'json'
         require 'open-uri'
-        require'net/https'
-        #url = URI.parse('https://MY_URL')
+        require 'net/http'
+        #uri = URI.parse('localhost:3000')
+        #http = Net::HTTP.new(uri.host, uri.port)
+        #req = Net::HTTP::Post.new(uri.path, {'Content-Type' => 'application/json'})
+        #req.body = @sign_up.to_json
+        #puts "response #{res.body}"
+        #puts JSON.parse(res.body)
         #request = Net::HTTP::Post.new(url.path)
         #response = Net::HTTP.start(url.host,url.port){|http| http.request(request)}
         #req.form_data = data
@@ -40,12 +46,12 @@ class SignUpsController < ApplicationController
         #con =Net::HTTP.new(url.host, url.port)
         #con.use_SSL = true
         #con.start {|http| http.request(req)}
-        format.html { redirect_to root_url, notice: 'New User was successfully created' }
+        format.html { redirect_to root_url, notice: "New User was successfully created" }
         format.json { render :show, status: :created, location: @sign_up }
       else
         format.html { render :new }
         format.json { render json: @sign_up.errors, status: :unprocessable_entity }
-      end
+      end 
     end
   end
 
