@@ -17,7 +17,7 @@ class SignUp < ApplicationRecord
 	validates :zip, :presence => true, :length =>{ :is => 5}
 	validates :company_phone_number, :presence => true, format: { with: /[0-9]/}, :length =>{ :is => 10}
 	validates :password, :confirmation => true, :presence => true, :length =>{ :in => 6..14}, format: { with: /\A[\w\_]+\z/}
-	validates :company_type, :presence => true, inclusion: { in: %w(Contractor, Member)}
+	validates :company_type, :presence => true, inclusion: { in: %w(Contractor Utility-Member)}
 	validates :user_name, :presence => true, :uniqueness => true
 	validates :password_confirmation, :presence => true
 		

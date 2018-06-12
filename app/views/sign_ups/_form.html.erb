@@ -116,7 +116,7 @@
         <div class="col-md-2 col-sm-12">
           <div class="field">
             <%= f.label :password, for: "pwd" %>
-            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%><h5><small> * Password must be alphanumeric. <p>* Must be 6 - 14 Characters</p> </small></h5>
+            <%= f.text_field :password, class: "form-control", type:'password', id: "pwd", placeholder: "********", required: true%><small> * Password must be alphanumeric. <p>* Must be 6 - 14 Characters</p></small>
           </div>
         </div>
 
@@ -127,22 +127,46 @@
           </div>
         </div>
 
-        <!-- Username Field. Suggest user? -->
-
-        <!-- New Line -->
-
         <div class="col-md-2 col-sm-12">
           <div class="field">
-            <%= f.label :company_type, for:"validationDefault01" %>
-            <p><%= f.select :company_type, ["Contractor","Member"], class: "form-control", id:'validationDefault01', required: true %></p>
+            <%= f.label :user_name, for: "validationDefault01" %>
+            <%= f.text_field :user_name, class: 'form-control', id: "validationDefault01", placeholder: "Username", required: true %>
           </div>
-        </div>
-
-        <div class="col-md-4 col-sm-12">
         </div>
 
       </div>
     </div>
+        <!-- Username Field. Suggest user? -->
+
+      <div class="container-fluid">
+        <div class="form-row">
+          <div class="col-md-3 col-sm-0">
+          </div>
+
+          <div class="col-md-2 col-sm-12">
+            <div class="field">
+              <%= f.label :company_type, for:"validationDefault01" %>
+              <p><%= f.select :company_type, ["Contractor","Utility-Member"], class: "form-control", id:'validationDefault01', required: true %></p>
+            </div>
+          </div>
+
+          <div class="col-md-0 col-sm-0">
+          </div>
+
+          <div class="col-md-4 col-sm-0">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required="true">
+              <small>
+                By checking this box I verify that I have watched the E-Ticket Training Video provided by USA North 811
+              </small>
+              </div>
+            
+          </div>
+        </div>
+
+      
+        </div>
+      </div>
 
     <!--Checkbox for video goes here -->
 
