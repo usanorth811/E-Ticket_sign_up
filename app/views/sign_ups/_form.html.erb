@@ -143,17 +143,38 @@
           <div class="col-md-3 col-sm-0">
           </div>
 
-          <div class="col-md-2 col-sm-12">
+          <div class="col-md-1 col-sm-12">
             <div class="field">
-              <%= f.label :company_type, for:"validationDefault01" %>
-              <p><%= f.select :company_type, ["Contractor","Utility-Member"], class: "form-control", id:'validationDefault01', required: true %></p>
+
+              <%= f.radio_button :company_type, 'Contractor', checked: true %>
+              <%= f.label :company_type_contractor, 'Contractor' %>
             </div>
           </div>
+
+
+            <div class="col-md-2">
+              <%= f.radio_button :company_type, 'Utility-Member' %>
+              <%= f.label :company_type_contractor, 'Utility Member' %>
+            </div>
+
+              <!--<%= f.label :company_type, for:"validationDefault01" %>
+              <p><%= f.select :company_type, ["Contractor","Utility-Member"], class: "form-control", id:'validationDefault01', required: true %></p> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
 
           <div class="col-md-0 col-sm-0">
           </div>
 
-          <div class="col-md-4 col-sm-0">
+      <div class="container-fluid">
+        <div class="form-row">
+
+          <div class="col-md-3 col-sm-0">
+          </div>
+
+          <div class="col-md-6 col-sm-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required="true">
               <small>
@@ -173,7 +194,7 @@
     <style type="text/css">#button-padding {padding-bottom: 45px !important;}</style>
 
     <div class="container-fluid" id="button-padding">
-
+      <div class="form-row">
       <div class="col-md-4 col-sm-0">
       </div>
 
@@ -187,7 +208,7 @@
           <%= f.submit class: 'btn btn-primary', type: "submit"%>
         </div>
       </div>
-
+    </div>
     </div>
   </form>
 
