@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+USA North 811 E-Ticket Sign Up
 
-Things you may want to cover:
+*Ruby 2.3.3
 
-* Ruby version
+*Rails 5.0.3
 
-* System dependencies
+*Configured with Puma 
 
-* Configuration
+*Configured with Postgresql
+	- There is no database currently being used
+	- All user info is recieved as a hash and exported as json
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to deploy
+	- move to the directory where the app will be stored
+	- clone from git repository to local machine
+		- git clone https://github.com/cwoo107/E-Ticket_sign_up.git
+	- within the app directory, run "rake db:migrate"
+	- run "rake routes"
+	- run "rails s"
