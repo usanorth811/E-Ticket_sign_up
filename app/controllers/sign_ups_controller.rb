@@ -46,7 +46,7 @@ class SignUpsController < ApplicationController
         #con =Net::HTTP.new(url.host, url.port)
         #con.use_SSL = true
         #con.start {|http| http.request(req)}
-        format.html { redirect_to "http://jonyetter.com/websites/USANorth811/california.html", notice: "New User was successfully created" }
+        format.html { redirect_to sign_ups_url, notice: "Congratulations on successfully signing up for E-tickets!" }
         format.json { render :show, status: :created, location: @sign_up }
       else
         format.html { render :new }
