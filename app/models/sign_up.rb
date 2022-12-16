@@ -5,6 +5,7 @@ class SignUp < ApplicationRecord
 	#attr_accessor :first_name, :Last_name, :Email, :company_name, :company_mailing_address, :city, :state, :zip, :company_phone_number, :password, :company_type, :user_name
 
 	#before_validation {self.password = SecureRandom.hex(4)}
+	before_create :invalidate
 	attr_accessor :password_confirmation
 	no_whitespace = /\A[\w\_]+\z/
 	EMAIL_REGEX = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
@@ -21,6 +22,10 @@ class SignUp < ApplicationRecord
 	validates :company_type, :presence => true, inclusion: { in: %w(Contractor Member)}
 	validates :user_name, :presence => true, format: { with: no_whitespace}, :length =>{ :in => 6..14}
 	validates :password_confirmation, :presence => true
+	
+	def invalidate
+		self.user_name = nil
+	end
 		
 	
 end
